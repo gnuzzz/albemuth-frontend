@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+        <title>Hello, world!</title>
+    </head>
+    <body style="margin: 0;">
+        <h1>Hello, World!</h1>
+        <p>Current date is: <span cid="Label" value="$currentDate" class="date" /></p>
+    </body>
+</html>

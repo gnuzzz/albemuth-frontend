@@ -1,0 +1,1 @@
+<input name="$fullName" value="$value" src="$src" alt="$alt" $disabledString />

@@ -1,0 +1,4 @@
+<form action="$url" method="$method" name="$name">
+    $formValues
+    <span cid="NestedContent" />
+</form>

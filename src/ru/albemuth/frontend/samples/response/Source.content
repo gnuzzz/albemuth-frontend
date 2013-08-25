@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Source</title>
+    </head>
+    <body>
+        <form cid="Form" listener="forwardResponse" name="form">
+            <input type="submit" cid="SubmitButton" listener="forwardResponse" response="FORWARD" name="forward" value="Forward" /><br />
+            <input type="submit" cid="SubmitButton" listener="redirectResponse" response="REDIRECT" name="redirect" value="Redirect" />
+        </form>
+    </body>
+</html>

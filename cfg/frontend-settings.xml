@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frontend-settings>
+    <import path="/ru/albemuth/frontend/components/" />
+
+    <macros>
+        <macros>
+            <pattern><![CDATA[<if ]]></pattern>
+            <replacement><![CDATA[<span cid="Condition"]]></replacement>
+        </macros>
+
+        <macros>
+            <pattern><![CDATA[</if>]]></pattern>
+            <replacement><![CDATA[</span>]]></replacement>
+        </macros>
+    </macros>
+
+    <macros>
+        <macros>
+            <pattern><![CDATA[<foreach]]></pattern>
+            <replacement><![CDATA[<span cid="Repetition"]]></replacement>
+        </macros>
+
+        <macros>
+            <pattern><![CDATA[</foreach>]]></pattern>
+            <replacement><![CDATA[</span>]]></replacement>
+        </macros>
+    </macros>
+
+    <macros>
+        <pattern><![CDATA[raw_attr="([^"]*)"]]></pattern>
+        <replacement><![CDATA[{0}]]></replacement>
+    </macros>
+</frontend-settings>

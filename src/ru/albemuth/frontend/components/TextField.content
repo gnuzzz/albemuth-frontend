@@ -1,0 +1,1 @@
+<input name="$fullName" value="$stringValue" $readOnlyString $disabledString $maxLengthString />

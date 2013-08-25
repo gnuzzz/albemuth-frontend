@@ -1,0 +1,62 @@
+<form cid="Form" listener="setUserAnswers" name="inquiryForm">
+    <table class="inquiry">
+        <tr>
+            <td><b>$inquiry.name</b></td>
+        </tr>
+        <div cid="Repetition" items="$inquiry.questions" item="$questionItem" itemid="$questionItem.question">
+            <tr>
+                <td class="question"><i>$questionItem.question</i></td>
+            </tr>
+            <tr>
+                <td class="answers">
+                    <div cid="Condition" condition="$showResults">
+                        <table class="results">
+                            <div cid="Repetition" items="$questionItem.answers" item="$answerItem">
+                                <tr>
+                                    <td><span cid="Label" value="$answerItem.answer" class="description" /> ($answerItem.userAnswersNumber / $userAnswersNumberInPercent%)</td>
+                                    <td style="width: 150px;"><table style="width: ${$userAnswersNumberInPercent + "%"}; background-color: red; border-left: 1px solid red;"><tr><td></td></tr></table></td>
+                                </tr>
+                            </div>
+                        </table>
+                    </div>
+                    <div cid="Condition" condition="$showResults" negate="true">
+                        <div cid="Condition" condition="$select">
+                            <select cid="Select" items="$questionItem.answers" item="$answerItem" selectedItem="$userAnswer" selectedItems="$userAnswers" multiple="$questionItem.multiple" itemTitle="$answerItem.answer" itemValue="$answerItem.answer" name="choices-select" class="answer choices" />
+                        </div>
+                        <div cid="Condition" condition="$select" negate="true">
+                            <table class="choices">
+                                <div cid="Repetition" items="$questionItem.answers" item="$answerItem" itemid="$answerItem.answer">
+                                    <tr>
+                                        <td>
+                                            <div cid="Condition" condition="$questionItem.multiple">
+                                                <input cid="CheckBox" type="checkbox" checked="$answerSelected" name="choice-checkbox" />&nbsp;<span cid="Label" value="$answerItem.answer" class="description" />
+                                            </div>
+                                            <div cid="Condition" condition="$questionItem.multiple" negate="true">
+                                                <input cid="RadioButton" type="radio" checked="$answerSelected" name="choice-radio" />&nbsp;<span cid="Label" value="$answerItem.answer" class="description" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </div>
+        <div cid="Condition" condition="$logged">
+            <div cid="Condition" condition="$showResults">
+                <tr>
+                    <td><a href="?showResults=off">Вернуться к опросу</a></td>
+                </tr>
+            </div>
+            <div cid="Condition" condition="$showResults" negate="true">
+                <tr>
+                    <td><a href="?showResults=on">Показать результаты</a></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" cid="SubmitButton" listener="setUserAnswers" value="Жми!" name="answer" /></td>
+                </tr>
+            </div>
+        </div>
+    </table>
+</form>
